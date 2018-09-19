@@ -4,6 +4,26 @@ class UI {
   }
 
   showProfile(user) {
+    let company='';
+    let location='';
+    let websiteBlog='';
+
+    if (user.company === null) {
+      company = '-';
+    } else {
+      company = user.company;
+    }
+    if (user.location === null) {
+      location = '-';
+    } else {
+      location = user.location;
+    }
+    if (user.blog === '') {
+      websiteBlog = '-';
+    } else {
+      websiteBlog = user.blog;
+    }
+
     this.profile.innerHTML = `
       <div class="card card-body mb-3">
         <div class="row">
@@ -18,9 +38,9 @@ class UI {
             <span class="badge badge-info">Following: ${user.following}</span>
             <br><br>
             <ul class="list-group">
-              <li class="list-group-item">Company: ${user.company}</li>
-              <li class="list-group-item">Website/Blog: ${user.blog}</li>
-              <li class="list-group-item">Location: ${user.location}</li>
+              <li class="list-group-item">Company: ${company}</li>
+              <li class="list-group-item">Website/Blog: ${websiteBlog}</li>
+              <li class="list-group-item">Location: ${location}</li>
               <li class="list-group-item">Member Since: ${user.created_at}</li>
             </ul>
           </div>
