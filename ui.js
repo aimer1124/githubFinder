@@ -9,17 +9,17 @@ class UI {
     let websiteBlog='';
 
     if (user.company === null) {
-      company = '-';
+      company = 'None';
     } else {
       company = user.company;
     }
     if (user.location === null) {
-      location = '-';
+      location = 'None';
     } else {
       location = user.location;
     }
     if (user.blog === '') {
-      websiteBlog = '-';
+      websiteBlog = '#';
     } else {
       websiteBlog = user.blog;
     }
@@ -39,7 +39,7 @@ class UI {
             <br><br>
             <ul class="list-group">
               <li class="list-group-item">Company: ${company}</li>
-              <li class="list-group-item">Website/Blog: ${websiteBlog}</li>
+              <li class="list-group-item">Website/Blog: <a href="${websiteBlog}" target="_blank">${websiteBlog}</a></li>
               <li class="list-group-item">Location: ${location}</li>
               <li class="list-group-item">Member Since: ${user.created_at}</li>
             </ul>
